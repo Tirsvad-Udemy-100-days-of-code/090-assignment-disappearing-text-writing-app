@@ -3,10 +3,10 @@
 """
 
 ## Seconds without typing after which all text is deleted.
-IDLE_TIMEOUT_SECONDS: float = 5.0
+IDLE_TIMEOUT_SECONDS: int = 5
 
 ## Seconds left at which the page warns the writer that the text is about to go.
-WARNING_THRESHOLD_SECONDS: float = 2.0
+WARNING_THRESHOLD_SECONDS: int = 2
 
 ## Milliseconds between two state requests from the browser.
 POLL_INTERVAL_MILLISECONDS: int = 200
