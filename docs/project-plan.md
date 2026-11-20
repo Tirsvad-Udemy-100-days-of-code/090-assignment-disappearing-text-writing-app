@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-20 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | [a8ae467] |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Reworded one open issue | pending |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Reworded one open issue | [3f52762] |
 
 ---
 
@@ -96,3 +96,4 @@ A No-Go on a phase moves every later gateway and the end date by the time of the
 [MIL-003]: ./milestones/mil-003-flask-web-app.md
 [MIL-004]: ./milestones/mil-004-docs-and-delivery.md
 [a8ae467]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/a8ae4670fbe5ea1e5fe952f7201da04ed809966a
+[3f52762]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/3f52762d0278573a7eb1ff6bd8fe7990c54f49d4
