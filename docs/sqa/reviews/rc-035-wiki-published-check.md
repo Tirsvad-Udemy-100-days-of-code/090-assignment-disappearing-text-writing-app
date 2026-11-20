@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | pending |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | [caffb42] |
 
 ---
 
@@ -57,3 +57,4 @@ Go — Criterion 14 is now confirmed on the published wiki; every mandatory crit
 
 [WIKI]: ../../wiki/Home.md
 [QC-WIKI-001]: ../../../framework/qc/artifacts/qc-wiki.md
+[caffb42]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/caffb42ffb6750fc5a24b01079302b37ccf52b41
