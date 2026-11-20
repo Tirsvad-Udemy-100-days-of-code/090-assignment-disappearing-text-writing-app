@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | pending |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | [a8ae467] |
 
 ---
 
@@ -65,3 +65,4 @@ updated whenever an artifact instance is created or reviewed.
 [RC-008]: ./reviews/rc-008-adr-0001.md
 [RC-009]: ./reviews/rc-009-adr-0002.md
 [SA-001]: ../stakeholder-analysis.md
+[a8ae467]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/a8ae4670fbe5ea1e5fe952f7201da04ed809966a
