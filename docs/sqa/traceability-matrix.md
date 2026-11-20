@@ -32,6 +32,15 @@ updated whenever an artifact instance is created or reviewed.
 | [MIL-004] | MIL | en | it | [MIL-003] | - | [RC-007] |
 | [ADR-0001] | ADR | - | - | [BC-001], [PP-001] | - | [RC-008] |
 | [ADR-0002] | ADR | - | - | [BC-001], [SA-001] | - | [RC-009] |
+| [US-001] | US | en | it | [BC-001], [MIL-002] | [UC-001] | [RC-022] |
+| [UC-001] | UC | en | it | [US-001] | [DM-001], [SSD-001] | [RC-023] |
+| [DM-001] | DM | en | it | [UC-001] | [SSD-001] | [RC-024] |
+| [SSD-001] | SSD | en | it | [UC-001], [DM-001] | [OC-001] | [RC-025] |
+| [OC-001] | OC | - | - | [SSD-001], [DM-001] | [SD-001] | [RC-026] |
+| [SD-001] | SD | - | - | [OC-001] | [DCD-001] | [RC-027] |
+| [DCD-001] | DCD | - | - | [DM-001], [SD-001] | - | [RC-019] |
+| [DM-002] | DM | en | it | [DM-001], [UC-001] | [DCD-002] | [RC-020] |
+| [DCD-002] | DCD | - | - | [DCD-001], [DM-002], [SD-001] | - | [RC-021] |
 
 ## Concern Coverage
 
@@ -50,10 +59,15 @@ updated whenever an artifact instance is created or reviewed.
 [ADR-0001]: ../adr/adr-0001-skip-optional-analysis-documents.md
 [ADR-0002]: ../adr/adr-0002-flask-and-server-side-timer.md
 [BC-001]: ../business-case.md
+[DCD-001]: ../use-cases/uc-001/dcd.md
+[DCD-002]: ../dcd.md
+[DM-001]: ../use-cases/uc-001/dm.md
+[DM-002]: ../domain-model.md
 [MIL-001]: ../milestones/mil-001-foundation.md
 [MIL-002]: ../milestones/mil-002-core-writing-session.md
 [MIL-003]: ../milestones/mil-003-flask-web-app.md
 [MIL-004]: ../milestones/mil-004-docs-and-delivery.md
+[OC-001]: ../use-cases/uc-001/oc.md
 [PP-001]: ../project-plan.md
 [RC-001]: ./reviews/rc-001-bc-001.md
 [RC-002]: ./reviews/rc-002-sa-001.md
@@ -67,4 +81,23 @@ updated whenever an artifact instance is created or reviewed.
 [RC-010]: ./reviews/rc-010-mil-001-code.md
 [RC-011]: ./reviews/rc-011-bc-001-delta.md
 [RC-012]: ./reviews/rc-012-pp-001-delta.md
+[RC-013]: ./reviews/rc-013-us-001.md
+[RC-014]: ./reviews/rc-014-uc-001.md
+[RC-015]: ./reviews/rc-015-dm-001.md
+[RC-016]: ./reviews/rc-016-ssd-001.md
+[RC-017]: ./reviews/rc-017-oc-001.md
+[RC-018]: ./reviews/rc-018-sd-001.md
+[RC-019]: ./reviews/rc-019-dcd-001.md
+[RC-020]: ./reviews/rc-020-dm-002.md
+[RC-021]: ./reviews/rc-021-dcd-002.md
+[RC-022]: ./reviews/rc-022-us-001-delta.md
+[RC-023]: ./reviews/rc-023-uc-001-delta.md
+[RC-024]: ./reviews/rc-024-dm-001-delta.md
+[RC-025]: ./reviews/rc-025-ssd-001-delta.md
+[RC-026]: ./reviews/rc-026-oc-001-delta.md
+[RC-027]: ./reviews/rc-027-sd-001-delta.md
 [SA-001]: ../stakeholder-analysis.md
+[SD-001]: ../use-cases/uc-001/sd.md
+[SSD-001]: ../use-cases/uc-001/ssd.md
+[UC-001]: ../use-cases/uc-001/uc.md
+[US-001]: ../user-stories.md

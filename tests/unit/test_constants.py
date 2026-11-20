@@ -7,7 +7,7 @@ from disappearing_text import constants
 
 def test_idle_timeout_is_five_seconds() -> None:
     """@brief The assignment asks for five seconds of idle time."""
-    assert constants.IDLE_TIMEOUT_SECONDS == 5.0
+    assert constants.IDLE_TIMEOUT_SECONDS == 5
 
 
 def test_warning_comes_before_the_timeout() -> None:
