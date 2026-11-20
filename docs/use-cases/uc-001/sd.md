@@ -9,14 +9,14 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-20 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | [99eebd6] |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Added the CrossReference to DCD-001, now that it exists | [99eebd6] |
+| 2026-11-20 | Deprecated | Jens Tirsvad Nielsen | S01 | Added the CrossReference to DCD-001, now that it exists | [99eebd6] |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Presentation layer named as in DCD-001: layer Delivery renamed Presentation, lifeline `:WritingController` replaces the Flask boundary, composition shows `create_app(clock)` and the controller | pending |
 
 ---
 
 ## Purpose
 
-These diagrams show how the objects of UC-001 collaborate to realize the contracts `type_text` and `get_state` of [OC-001]. They answer concern CN-001 (text must disappear after more than 5 seconds without typing), CN-003 (tests protect the session rules) and CN-004 (readable code with the assignment's function names) of [SA-001], and serve S01, who decides the design, and S02, who reads it. The design is layered (Clean Architecture): Delivery, Application, Domain and Infrastructure, in the colours the framework fixes. The Delivery layer is only drawn as the boundary "Presentation (Flask controller)" that calls the use cases; its design belongs to MIL-003. Every call across a layer boundary goes through an interface of the inner layer: the use cases call the `Clock` port, which `SystemClock` implements in the Infrastructure layer; the diagrams draw the port as its own lifeline in the Application layer.
+These diagrams show how the objects of UC-001 collaborate to realize the contracts `type_text` and `get_state` of [OC-001]. They answer concern CN-001 (text must disappear after more than 5 seconds without typing), CN-003 (tests protect the session rules) and CN-004 (readable code with the assignment's function names) of [SA-001], and serve S01, who decides the design, and S02, who reads it. The design is layered (Clean Architecture): Presentation, Application, Domain and Infrastructure, in the colours the framework fixes (the Presentation layer has the colour of the Delivery layer). The Presentation layer is drawn as `WritingController`, which calls the use cases, and `CompositionRoot`; their design is in [DCD-001]. Every call across a layer boundary goes through an interface of the inner layer: the use cases call the `Clock` port, which `SystemClock` implements in the Infrastructure layer; the diagrams draw the port as its own lifeline in the Application layer.
 
 The mapping from system operation to class is: `type_text` is `TypeText.execute(text)`, and `get_state` is `GetWritingState.execute()`. The internal check of the Idle Timeout, `check_timeout`, is a method of `WritingSession` that `GetWritingState` calls.
 
@@ -28,8 +28,9 @@ The mapping from system operation to class is: `type_text` is `TypeText.execute(
 
 ```plantuml
 @startuml
-box "Delivery" #FADADD
+box "Presentation" #FADADD
 participant ":CompositionRoot" as CR
+participant ":WritingController" as WC
 end box
 box "Application" #FFF3B0
 participant ":TypeText" as TT
@@ -41,11 +42,16 @@ end box
 box "Infrastructure" #D4E4F7
 participant ":SystemClock" as SC
 end box
+[-> CR : create_app(clock)
 activate CR
 CR -> WS ** : create()
-CR -> SC ** : create()
+opt clock is None
+  CR -> SC ** : create()
+end
 CR -> TT ** : create(session, clock)
 CR -> GS ** : create(session, clock)
+CR -> WC ** : create(type_text, get_state)
+[<-- CR : Flask application
 deactivate CR
 @enduml
 ```
@@ -54,18 +60,18 @@ deactivate CR
 
 | Pattern (GRASP / GoF) | Applied to | Rationale |
 | --- | --- | --- |
-| Creator (GRASP) | `CompositionRoot` creates `WritingSession`, `SystemClock` and both use cases | It is the one place that knows all the parts, so the inner layers never create outer ones |
-| Dependency Injection | `WritingSession` and the clock are passed to both use cases | The use cases share one session and never build a clock themselves, so tests pass a fake clock |
+| Creator (GRASP) | `CompositionRoot` creates `WritingSession`, `SystemClock` (only when no clock is given), both use cases and `WritingController` | It is the one place that knows all the parts, so the inner layers never create outer ones |
+| Dependency Injection | `WritingSession` and the clock are passed to both use cases, and the use cases to the controller | The use cases share one session and never build a clock themselves, so tests pass a fake clock to `create_app` |
 
 ### Postcondition Coverage
 
 | Postcondition (from contract) | Satisfied by message |
 | --- | --- |
-| Precondition of both contracts: a Writing Session exists, with a Text and an Idle Timeout | `create()` of `WritingSession` (it starts with empty Text, text lost false, and the Idle Timeout constants) |
+| Precondition of both contracts: a Writing Session exists, with a Text and an Idle Timeout | `create()` of `WritingSession` (it starts with empty Text, text lost false, and the Idle Timeout constants); the controller receives the use cases that share it with `create(type_text, get_state)` |
 
 ### Responsibility Check
 
-The composition root only creates and connects objects; it holds no rule.
+The composition root only creates and connects objects; it holds no rule. The optional clock of `create_app` is the test seam: when it is given, no `SystemClock` is created.
 
 ## Sequence: type_text
 
@@ -75,8 +81,8 @@ The composition root only creates and connects objects; it holds no rule.
 
 ```plantuml
 @startuml
-box "Delivery" #FADADD
-participant ":Presentation (Flask controller)" as P
+box "Presentation" #FADADD
+participant ":WritingController" as P
 end box
 box "Application" #FFF3B0
 participant ":TypeText" as TT
@@ -117,7 +123,7 @@ deactivate TT
 
 | Pattern (GRASP / GoF) | Applied to | Rationale |
 | --- | --- | --- |
-| Controller (GRASP) | `TypeText` | A use case object receives the system operation from the Presentation and coordinates, without holding a rule |
+| Controller (GRASP) | `TypeText` | A use case object receives the system operation from the `WritingController` and coordinates, without holding a rule |
 | Information Expert (GRASP) | `WritingSession` | It owns the Text, the last typing moment and the Idle Timeout, so it applies the change itself |
 | Ports and Adapters (Dependency Inversion) | `Clock` port, `SystemClock` adapter | The Application layer depends on an interface; the monotonic system clock is an Infrastructure detail |
 | Pure Fabrication (GRASP) | `SystemClock` | A class with no domain meaning, made to keep the clock out of the domain |
@@ -144,8 +150,8 @@ deactivate TT
 
 ```plantuml
 @startuml
-box "Delivery" #FADADD
-participant ":Presentation (Flask controller)" as P
+box "Presentation" #FADADD
+participant ":WritingController" as P
 end box
 box "Application" #FFF3B0
 participant ":GetWritingState" as GS

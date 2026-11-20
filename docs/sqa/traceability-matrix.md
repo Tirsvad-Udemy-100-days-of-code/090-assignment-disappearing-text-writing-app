@@ -37,10 +37,10 @@ updated whenever an artifact instance is created or reviewed.
 | [DM-001] | DM | en | it | [UC-001] | [SSD-001] | [RC-024] |
 | [SSD-001] | SSD | en | it | [UC-001], [DM-001] | [OC-001] | [RC-025] |
 | [OC-001] | OC | - | - | [SSD-001], [DM-001] | [SD-001] | [RC-026] |
-| [SD-001] | SD | - | - | [OC-001] | [DCD-001] | [RC-027] |
-| [DCD-001] | DCD | - | - | [DM-001], [SD-001] | - | [RC-019] |
+| [SD-001] | SD | - | - | [OC-001] | [DCD-001] | [RC-030] |
+| [DCD-001] | DCD | - | - | [DM-001], [SD-001] | - | [RC-029] |
 | [DM-002] | DM | en | it | [DM-001], [UC-001] | [DCD-002] | [RC-020] |
-| [DCD-002] | DCD | - | - | [DCD-001], [DM-002], [SD-001] | - | [RC-021] |
+| [DCD-002] | DCD | - | - | [DCD-001], [DM-002], [SD-001] | - | [RC-031] |
 
 ## Concern Coverage
 
@@ -96,6 +96,10 @@ updated whenever an artifact instance is created or reviewed.
 [RC-025]: ./reviews/rc-025-ssd-001-delta.md
 [RC-026]: ./reviews/rc-026-oc-001-delta.md
 [RC-027]: ./reviews/rc-027-sd-001-delta.md
+[RC-028]: ./reviews/rc-028-mil-002-code.md
+[RC-029]: ./reviews/rc-029-dcd-001-delta.md
+[RC-030]: ./reviews/rc-030-sd-001-delta2.md
+[RC-031]: ./reviews/rc-031-dcd-002-delta.md
 [SA-001]: ../stakeholder-analysis.md
 [SD-001]: ../use-cases/uc-001/sd.md
 [SSD-001]: ../use-cases/uc-001/ssd.md
