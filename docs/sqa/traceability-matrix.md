@@ -46,13 +46,21 @@ updated whenever an artifact instance is created or reviewed.
 
 | Concern (CN-ID) | Views that answer it | Decisions (ADR) | Quality check (TP) | Status |
 | --- | --- | --- | --- | --- |
-| CN-001 | [<view-ID>] | [<ADR-ID>] | [<TP-ID>] | Covered / Gap |
+| CN-001 | [UC-001], [SD-001], [DCD-002] | [ADR-0002] | unit and integration tests (no TP document) | Covered |
+| CN-002 | [PP-001], [MIL-001] | [ADR-0001] | - | Covered |
+| CN-003 | [OC-001], [DCD-002] | [ADR-0002] | unit tests (no TP document) | Covered |
+| CN-004 | [DCD-002] | - | - | Covered |
+| CN-005 | README | - | - | Covered |
+| CN-006 | README, wiki | - | - | Covered |
+| CN-007 | README, repository description and topics | - | - | Covered |
+| CN-008 | [DCD-002] | [ADR-0002] | - | Covered |
 
 ## Open Inconsistencies
 
 | # | Views | Inconsistency | Found in (RC-ID) | Status | Resolved in |
 | --- | --- | --- | --- | --- | --- |
-| 1 | [<view-ID>], [<view-ID>] | <what differs> | [<RC-ID>] | Open | - |
+| 1 | [DCD-001], [SD-001] | The Delivery package and `FlaskController` names no longer matched the Presentation layer design | [RC-029] | Closed | [RC-030] |
+
 
 ---
 

@@ -9,6 +9,7 @@ A small Flask web app for writers who get stuck: type into the page, and if you 
 - [Setup](#-setup)
 - [Run](#-run)
 - [Tests](#-tests)
+- [Build steps](#-build-steps)
 - [License](#-license)
 - [Links](#-links)
 - [Appendix: Project documents](#-appendix-project-documents)
@@ -77,6 +78,34 @@ Build the API documentation from the Doxygen comments with `doxygen Doxyfile` (o
 .\scripts\opengrep-scan.ps1
 ```
 
+## 🪜 Build steps
+
+The app was built in four steps. The [wiki][wiki] explains what was gained in each step, in English, Danish and Bahasa Malaysia. The screenshots were taken with a headless browser in a Docker container (`scripts/capture-screenshots.ps1`).
+
+### Step 1: Empty editor
+
+![The empty editor](docs/images/step-1-empty-editor.png)
+
+The page opens with an empty editor. Layers, constants and the app factory are in place.
+
+### Step 2: Typing with countdown
+
+![Typing with the countdown](docs/images/step-2-typing-with-countdown.png)
+
+Every change is sent to the server, which keeps the text and restarts the 5 second countdown.
+
+### Step 3: Warning in the last seconds
+
+![The warning in the last seconds](docs/images/step-3-warning-last-seconds.png)
+
+In the last 2 seconds the countdown turns red.
+
+### Step 4: Text gone
+
+![The text is gone](docs/images/step-4-text-gone.png)
+
+After more than 5 seconds without typing, all text is deleted.
+
 ## 📄 License
 
 GNU Affero General Public License v3.0, see [LICENSE][license].
@@ -105,6 +134,7 @@ GNU Affero General Public License v3.0, see [LICENSE][license].
 
 [license]: ./LICENSE
 [repository]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app
+[wiki]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/wiki
 [documentation]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/wiki
 [issues]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/issues
 [agents]: ./AGENTS.md
