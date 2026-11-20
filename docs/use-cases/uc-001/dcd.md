@@ -10,7 +10,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-20 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | [99eebd6] |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Presentation layer designed for MIL-003: CompositionRoot, WritingController, WritingViewModel, WritingView and WritingScript replace the boundary placeholders; package Delivery renamed Presentation | pending |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Presentation layer designed for MIL-003: CompositionRoot, WritingController, WritingViewModel, WritingView and WritingScript replace the boundary placeholders; package Delivery renamed Presentation | [10333dc] |
 
 ---
 
@@ -202,3 +202,4 @@ Every dependency points inward: Presentation depends on Application and Domain, 
 [SD-001]: ./sd.md
 [SA-001]: ../../stakeholder-analysis.md
 [99eebd6]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/99eebd69b73173ca68a4d9676c39855a30cdf1b9
+[10333dc]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/10333dcc3fd08cce265fdb17e9ef1c4e5fbb001c

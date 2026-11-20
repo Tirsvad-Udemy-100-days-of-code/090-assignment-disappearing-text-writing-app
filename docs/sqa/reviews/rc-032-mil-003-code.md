@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | pending |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | [10333dc] |
 
 ---
 
@@ -59,3 +59,4 @@ Go — All mandatory criteria pass.
 
 [MIL-003]: ../../milestones/mil-003-flask-web-app.md
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
+[10333dc]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/10333dcc3fd08cce265fdb17e9ef1c4e5fbb001c

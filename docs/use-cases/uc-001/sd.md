@@ -10,7 +10,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-20 | Deprecated | Jens Tirsvad Nielsen | S01 | Added the CrossReference to DCD-001, now that it exists | [99eebd6] |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Presentation layer named as in DCD-001: layer Delivery renamed Presentation, lifeline `:WritingController` replaces the Flask boundary, composition shows `create_app(clock)` and the controller | pending |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Presentation layer named as in DCD-001: layer Delivery renamed Presentation, lifeline `:WritingController` replaces the Flask boundary, composition shows `create_app(clock)` and the controller | [10333dc] |
 
 ---
 
@@ -236,3 +236,4 @@ The Application object coordinates and builds the answer. The session alone chan
 [SA-001]: ../../stakeholder-analysis.md
 [DCD-001]: ./dcd.md
 [99eebd6]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/99eebd69b73173ca68a4d9676c39855a30cdf1b9
+[10333dc]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/10333dcc3fd08cce265fdb17e9ef1c4e5fbb001c
