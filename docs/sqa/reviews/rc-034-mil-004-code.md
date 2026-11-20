@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | pending |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | [5dc94c1] |
 
 ---
 
@@ -59,3 +59,4 @@ Go — All mandatory criteria pass; the helper is outside the application layers
 
 [MIL-004]: ../../milestones/mil-004-docs-and-delivery.md
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
+[5dc94c1]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/5dc94c137814bec4a092751030acb1316d4b7e77
