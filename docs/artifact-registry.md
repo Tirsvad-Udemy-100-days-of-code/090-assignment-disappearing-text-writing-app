@@ -23,7 +23,7 @@ document of a type. `Primary File` may contain a glob (e.g.
 | OC | Operation Contract | docs/use-cases/uc-*/oc.md | 002 |
 | SD | Sequence Diagram | docs/use-cases/uc-*/sd.md | 002 |
 | DCD | Design Class Diagram | docs/dcd.md | 003 |
-| RC | SQA Review Record | docs/sqa/reviews/rc-*.md | 033 |
+| RC | SQA Review Record | docs/sqa/reviews/rc-*.md | 035 |
 | TM | Traceability Matrix | docs/sqa/traceability-matrix.md | 002 |
 
 ## Languages
