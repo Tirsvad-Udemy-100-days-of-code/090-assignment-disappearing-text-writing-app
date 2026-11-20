@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.import_linter_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and local configuration: never commit
+.env
+.env.*
+!.env.example
+
+# Generated documentation
+/docs/doxygen/
+
+# Local prompt log: not a project document
+/docs/ai-prompts/
+
+# Scan output and local tooling
+/.opengrep-report/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
