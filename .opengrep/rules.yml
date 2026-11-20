@@ -1,0 +1,47 @@
+rules:
+  - id: flask-debug-enabled
+    languages: [python]
+    severity: ERROR
+    message: Flask debug mode must not be enabled in code; it exposes an interactive debugger.
+    patterns:
+      - pattern-either:
+          - pattern: $APP.run(..., debug=True, ...)
+          - pattern: $APP.debug = True
+  - id: dynamic-code-execution
+    languages: [python]
+    severity: ERROR
+    message: eval and exec run text as code; do not use them.
+    pattern-either:
+      - pattern: eval(...)
+      - pattern: exec(...)
+  - id: shell-true-subprocess
+    languages: [python]
+    severity: ERROR
+    message: subprocess with shell=True allows command injection.
+    pattern: subprocess.$FUNC(..., shell=True, ...)
+  - id: hardcoded-secret
+    languages: [python]
+    severity: ERROR
+    message: A secret looks hard coded; read it from the environment instead.
+    patterns:
+      - pattern-either:
+          - pattern: $NAME = "..."
+          - pattern: $NAME = '...'
+      - metavariable-regex:
+          metavariable: $NAME
+          regex: (?i).*(password|passwd|secret|token|api_key|apikey).*
+  - id: print-in-source
+    languages: [python]
+    severity: WARNING
+    message: Use logging instead of print.
+    pattern: print(...)
+    paths:
+      include:
+        - src/
+  - id: unsafe-html-render
+    languages: [python]
+    severity: ERROR
+    message: Markup() and render_template_string() with user text risk cross-site scripting.
+    pattern-either:
+      - pattern: Markup(...)
+      - pattern: render_template_string(...)

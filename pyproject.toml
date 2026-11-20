@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "disappearing-text-writing-app"
+version = "0.1.0"
+description = "A writing app where all text disappears if you stop typing for 5 seconds (Udemy 100 Days of Code, day 90)."
+readme = "README.md"
+requires-python = ">=3.13"
+license = "AGPL-3.0-or-later"
+dependencies = [
+    "flask>=3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "import-linter>=2.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+disappearing_text = ["presentation/**/*.html", "presentation/**/*.js", "presentation/**/*.css"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "T20"]
+
+[tool.mypy]
+strict = true
+python_version = "3.13"
+mypy_path = "src"
+
+[tool.importlinter]
+root_package = "disappearing_text"
+
+[[tool.importlinter.contracts]]
+name = "Layers point inward"
+type = "layers"
+layers = [
+    "disappearing_text.presentation",
+    "disappearing_text.infrastructure",
+    "disappearing_text.application",
+    "disappearing_text.domain",
+]
