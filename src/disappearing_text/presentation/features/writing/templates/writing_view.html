@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{{ view.title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='writing.css') }}">
+</head>
+<body data-state="state-empty" class="state-empty"
+      data-poll-interval="{{ view.poll_interval_milliseconds }}">
+  <main>
+    <h1>{{ view.title }}</h1>
+    <textarea id="editor" autofocus spellcheck="false"
+              aria-label="Your text"></textarea>
+    <p id="countdown" role="timer" aria-live="off" hidden></p>
+    <p id="status" aria-live="polite">Start typing. Your text disappears if you stop for more than {{ view.idle_timeout_seconds }} seconds.</p>
+  </main>
+  <script src="{{ url_for('static', filename='writing.js') }}" defer></script>
+</body>
+</html>

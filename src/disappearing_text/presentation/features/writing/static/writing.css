@@ -1,0 +1,96 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f6f5f1;
+  --fg: #22252a;
+  --muted: #5d6470;
+  --surface: #ffffff;
+  --border: #c9ccd2;
+  --warn: #b3261e;
+  --gone: #8a5a00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17191d;
+    --fg: #e6e7ea;
+    --muted: #a3a9b4;
+    --surface: #1f2228;
+    --border: #3a3f48;
+    --warn: #ff8a80;
+    --gone: #ffcc66;
+  }
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  width: min(44rem, 100%);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 16rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  resize: vertical;
+  font: inherit;
+  font-size: 1.125rem;
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+}
+
+textarea:focus {
+  outline: 3px solid var(--muted);
+  outline-offset: 1px;
+}
+
+#countdown,
+#status {
+  margin: 1rem 0 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+#countdown {
+  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.state-warning #countdown {
+  color: var(--warn);
+  font-weight: 700;
+}
+
+.state-warning textarea {
+  border-color: var(--warn);
+}
+
+.state-gone #status {
+  color: var(--gone);
+  font-weight: 600;
+}
