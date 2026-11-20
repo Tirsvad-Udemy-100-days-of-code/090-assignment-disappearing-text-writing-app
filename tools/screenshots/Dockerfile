@@ -3,7 +3,9 @@
 FROM python:3.13-slim
 
 WORKDIR /app
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 RUN apt-get update && apt-get install -y --no-install-recommends libatomic1 \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 COPY pyproject.toml README.md ./
 COPY src ./src
@@ -12,7 +14,7 @@ RUN python -m pip install --upgrade pip \
     && python -m playwright install --with-deps chromium
 
 COPY tools/screenshots/capture.py ./capture.py
+RUN useradd --create-home shots && mkdir /out && chown shots /out
+USER shots
 ENV OUT_DIR=/out
-# Root is needed to write into the folder mapped from the host; the container is throwaway.
-# nosemgrep: dockerfile.security.missing-user.missing-user
 CMD ["python", "capture.py"]
