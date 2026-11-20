@@ -11,7 +11,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | [a8ae467] |
+| 2026-11-20 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | [a8ae467] |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Reworded one constraint | pending |
 
 ---
 
@@ -133,8 +134,7 @@ and the Product Owner's habit of working plan first with reviewed artifacts.
 - Flask for the web layer; pytest for tests; constants in `constants.py`.
 - Folders `src/`, `tests/` and `docs/`.
 - Doxygen comments in source and a `Doxyfile`.
-- The word for artificial intelligence is not written in any artifact or file of
-  the repository.
+- Artifacts describe the product and the process, not the tools used to write them.
 - One branch and pull request per milestone.
 
 ## Cost–Benefit Assessment

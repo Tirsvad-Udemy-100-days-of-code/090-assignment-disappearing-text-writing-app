@@ -11,7 +11,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | [a8ae467] |
+| 2026-11-20 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | [a8ae467] |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Reworded one open issue | pending |
 
 ---
 
@@ -84,7 +85,7 @@ A No-Go on a phase moves every later gateway and the end date by the time of the
 
 - The Day 90 assignment names no functions; function names are taken from the assignment's wording (type text, check timeout, clear text) and S01 may rename them.
 - KPI, Business Model Canvas and BPMN are skipped for a one-assignment project; the reason is recorded in an ADR in [MIL-001].
-- The framework requires a prompt log under `docs/ai-prompts/`; the folder name contains the word the Product Owner does not want in artifacts, so the log is kept locally and ignored by git. S01 may decide otherwise.
+- The framework requires a session prompt log; the repository is public, so the log is kept locally and ignored by git as the framework says. S01 may decide otherwise.
 
 ---
 

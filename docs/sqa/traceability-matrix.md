@@ -23,9 +23,9 @@ updated whenever an artifact instance is created or reviewed.
 
 | Artifact Instance | Type | Language | Domain | Upstream (Backward Link) | Downstream (Forward Link) | Last Reviewed (RC-ID) |
 | --- | --- | --- | --- | --- | --- | --- |
-| [BC-001] | BC | en | it | - | [SA-001], [PP-001] | [RC-001] |
+| [BC-001] | BC | en | it | - | [SA-001], [PP-001] | [RC-011] |
 | [SA-001] | SA | en | it | [BC-001] | [PP-001] | [RC-002] |
-| [PP-001] | PP | en | it | [BC-001], [SA-001] | [MIL-001], [MIL-002], [MIL-003], [MIL-004] | [RC-003] |
+| [PP-001] | PP | en | it | [BC-001], [SA-001] | [MIL-001], [MIL-002], [MIL-003], [MIL-004] | [RC-012] |
 | [MIL-001] | MIL | en | it | [PP-001] | [MIL-002] | [RC-004] |
 | [MIL-002] | MIL | en | it | [MIL-001] | [MIL-003] | [RC-005] |
 | [MIL-003] | MIL | en | it | [MIL-002] | [MIL-004] | [RC-006] |
@@ -64,5 +64,7 @@ updated whenever an artifact instance is created or reviewed.
 [RC-007]: ./reviews/rc-007-mil-004.md
 [RC-008]: ./reviews/rc-008-adr-0001.md
 [RC-009]: ./reviews/rc-009-adr-0002.md
+[RC-010]: ./reviews/rc-010-mil-001-code.md
+[RC-011]: ./reviews/rc-011-bc-001-delta.md
+[RC-012]: ./reviews/rc-012-pp-001-delta.md
 [SA-001]: ../stakeholder-analysis.md
-[a8ae467]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/a8ae4670fbe5ea1e5fe952f7201da04ed809966a
