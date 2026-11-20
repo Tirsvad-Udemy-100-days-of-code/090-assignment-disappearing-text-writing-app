@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | pending |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | [99eebd6] |
 
 ---
 
@@ -48,3 +48,4 @@ Go — Delta re-review: only the CrossReference and its link changed; the conten
 
 [OC-001]: ../../use-cases/uc-001/oc.md
 [QC-OC-001]: ../../../framework/qc/artifacts/qc-operation-contract.md
+[99eebd6]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/99eebd69b73173ca68a4d9676c39855a30cdf1b9

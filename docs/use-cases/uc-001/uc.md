@@ -11,8 +11,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-20 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | pending |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Added the CrossReference to DM-001 and SSD-001, now that they exist | pending |
+| 2026-11-20 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | [99eebd6] |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Added the CrossReference to DM-001 and SSD-001, now that they exist | [99eebd6] |
 
 ---
 
@@ -80,3 +80,4 @@ No other use case is included or extended (`<<include>>` and `<<extend>>` are no
 [BC-001]: ../../business-case.md
 [DM-001]: ./dm.md
 [SSD-001]: ./ssd.md
+[99eebd6]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/99eebd69b73173ca68a4d9676c39855a30cdf1b9

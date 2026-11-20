@@ -11,7 +11,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version: concepts of UC-001 added from [DM-001] | pending |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version: concepts of UC-001 added from [DM-001] | [99eebd6] |
 
 ---
 
@@ -70,3 +70,4 @@ WritingSession "0..*" --> "1" IdleTimeout : ends after
 [UC-001]: ./use-cases/uc-001/uc.md
 [DM-001]: ./use-cases/uc-001/dm.md
 [SA-001]: ./stakeholder-analysis.md
+[99eebd6]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/99eebd69b73173ca68a4d9676c39855a30cdf1b9

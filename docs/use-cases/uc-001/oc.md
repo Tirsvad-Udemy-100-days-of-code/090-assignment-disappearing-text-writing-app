@@ -9,8 +9,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-20 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | pending |
-| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Added the CrossReference to SD-001, now that it exists | pending |
+| 2026-11-20 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | [99eebd6] |
+| 2026-11-20 | Accepted | Jens Tirsvad Nielsen | S01 | Added the CrossReference to SD-001, now that it exists | [99eebd6] |
 
 ---
 
@@ -79,3 +79,4 @@ This contract includes the check of the Idle Timeout (`check_timeout`). The chec
 [SSD-001]: ./ssd.md
 [DM-001]: ./dm.md
 [SD-001]: ./sd.md
+[99eebd6]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/090-assignment-disappearing-text-writing-app/commit/99eebd69b73173ca68a4d9676c39855a30cdf1b9
