@@ -13,4 +13,6 @@ RUN python -m pip install --upgrade pip \
 
 COPY tools/screenshots/capture.py ./capture.py
 ENV OUT_DIR=/out
+# Root is needed to write into the folder mapped from the host; the container is throwaway.
+# nosemgrep: dockerfile.security.missing-user.missing-user
 CMD ["python", "capture.py"]

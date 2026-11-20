@@ -1,32 +1,22 @@
 """@file
-@brief Starts the app and takes one screenshot per build step with a headless browser.
+@brief Serves the app in a thread and takes one screenshot per build step.
 
-Runs inside the container built from tools/screenshots/Dockerfile.
+Uses a headless browser and runs inside the container of tools/screenshots.
 """
 
 import os
-import subprocess
 import sys
-import time
-import urllib.request
+import threading
 from pathlib import Path
 
 from playwright.sync_api import Page, sync_playwright
+from werkzeug.serving import make_server
+
+from disappearing_text.presentation.composition_root import create_app
 
 URL = "http://127.0.0.1:5000/"
 OUT_DIR = Path(os.environ.get("OUT_DIR", "/out"))
 SAMPLE_TEXT = "It was a quiet morning, and the words finally started to come"
-
-
-def wait_for_server() -> None:
-    """@brief Wait until the app answers, or stop after 20 seconds."""
-    for _ in range(100):
-        try:
-            urllib.request.urlopen(URL, timeout=1).close()
-            return
-        except OSError:
-            time.sleep(0.2)
-    raise RuntimeError("the app did not start")
 
 
 def wait_for_state(page: Page, state: str) -> None:
@@ -53,9 +43,10 @@ def capture(page: Page, name: str) -> None:
 def main() -> None:
     """@brief Take the four step screenshots."""
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    server = subprocess.Popen([sys.executable, "-m", "disappearing_text"])
+    server = make_server("127.0.0.1", 5000, create_app())
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
     try:
-        wait_for_server()
         with sync_playwright() as playwright:
             browser = playwright.chromium.launch()
             page = browser.new_page(viewport={"width": 900, "height": 600})
@@ -70,8 +61,8 @@ def main() -> None:
             capture(page, "step-4-text-gone.png")
             browser.close()
     finally:
-        server.terminate()
-        server.wait(timeout=10)
+        server.shutdown()
+        thread.join(timeout=10)
 
 
 if __name__ == "__main__":
